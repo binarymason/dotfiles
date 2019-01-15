@@ -50,8 +50,8 @@ function set_git_branch {
   git_status="$(git status 2> /dev/null)"
 
   # Set color based on clean/staged/dirty.
-  if [[ ${git_status} =~ "working directory clean" ]]; then
-    state="${LIGHT_GREEN}"
+  if [[ ${git_status} =~ "working tree clean" ]]; then
+    state="${LIGHT_GRAY}"
   elif [[ ${git_status} =~ "Changes to be committed" ]]; then
     state="${YELLOW}"
   else
@@ -142,7 +142,7 @@ function set_bash_prompt () {
   echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"
 
   # Set the bash prompt variable.
-  PS1="${LIGHT_GREEN}\u@\h${COLOR_NONE}:\w ${BRANCH}${BLUE}${PROMPT_SYMBOL}${COLOR_NONE} "
+  PS1="${LIGHT_GREEN}\u@\h${WHITE}:\w ${BRANCH}${BLUE}${PROMPT_SYMBOL}${COLOR_NONE} "
 }
 
 # Tell bash to execute this function just before displaying its prompt.
