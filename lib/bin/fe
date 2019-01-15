@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Fuzzy finder to open files from command line.
 # Uses $EDITOR if defined, otherwise vim.
@@ -9,4 +9,7 @@ fe() {
   IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
   [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
 }
+
+
+fe "$*"
 

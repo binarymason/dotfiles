@@ -1,6 +1,5 @@
 #!/bin/sh
 
-alias vim="nvim"
-alias vi="nvim"
-alias vimrc="$EDITOR ~/.vimrc"
+alias vi="vim"
+alias vimrc="$EDITOR ~/.vim/vimrc"
 

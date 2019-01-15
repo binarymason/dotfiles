@@ -14,7 +14,6 @@ Plug 'jgdavey/vim-blockle', { 'for': 'ruby' }                   " Quickly toggle
 Plug 'jiangmiao/auto-pairs'                                     " Insert or delete brackets, parens, quotes in pair
 Plug 'junegunn/vim-easy-align', { 'for': 'ruby' }               " A Vim alignment plugin
 Plug 'mxw/vim-jsx',                                             " React JSX syntax highlighting and indenting for vim.
-Plug 'neomake/neomake'                                          " Async :make and linting framework for Neovim/Vim
 Plug 'othree/html5.vim', { 'for': ['javascript', 'html'] }      " HTML5 omnicomplete and syntax
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'                                  " Vastly improved Javascript indentation and syntax support
@@ -49,7 +48,7 @@ filetype plugin indent on
 syntax enable
 
 " Use silent to squelch warnings when solarized is not installed.
-silent! colorscheme solarized
+"silent! colorscheme solarized
 set background=dark
 
 set ttyfast                       " faster redraw
@@ -134,12 +133,6 @@ let g:airline#extensions#tabline#buffer_min_count = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#tabs_label = ''
 let g:airline#extensions#tabline#show_splits = 0
-
-let g:neomake_open_list=0
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_jsx_enabled_makers = ['eslint']
-let g:neomake_sh_shellcheck_args = neomake#makers#ft#sh#shellcheck()['args'] + ['-e', 'SC1090,SC1091,SC2039']
-let g:neomake_bash_enabled_makers = ['shellcheck']
 
 let g:autoswap_detect_tmux=1      " Tell autoswap to switch to correct tmux window
 
@@ -361,9 +354,6 @@ augroup configgroup
     " Strip trailing whitespace on write
     " autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
-    " Use neomake on every save
-    autocmd BufWritePost * Neomake
-
     autocmd BufEnter *.zsh-theme setlocal filetype=zsh
     autocmd BufEnter Guardfile,.pryrc setlocal filetype=ruby
     autocmd BufEnter,FocusGained * checktime
@@ -395,7 +385,7 @@ augroup END
 "  Configurations
 " -----------------------------------------------------------------------------
 
-set shell=zsh
+set shell=bash
 
 " Recursively add everything to path to use helpful file commands
 set path+=client/**,lib/**,app/**

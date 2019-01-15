@@ -1,6 +1,0 @@
-#!/bin/sh
-
-source "$HOME/.files/script/init"
-
-${DOTFILES_ROOT}/script/setups/rbenv
-${DOTFILES_ROOT}/script/setups/gpg-agent

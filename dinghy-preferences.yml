@@ -1,6 +1,0 @@
----
-:preferences:
-  :proxy_disabled: false
-  :fsevents_disabled: false
-  :create:
-    provider: virtualbox

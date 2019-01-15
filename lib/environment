@@ -1,0 +1,10 @@
+#!/bin/bash
+
+
+export DOTFILES_ROOT="$HOME/.files"
+
+export EDITOR='vim'
+
+# add dotfile commands to PATH
+export PATH="$DOTFILES_ROOT/lib/bin:$PATH"
+

@@ -1,12 +1,9 @@
 # Dotfiles
 
 
-### Installation
-
-(This runs `script/bootstrap`)
-
-```sh
-
-curl -L https://git.io/vDfi2 > strap.sh && bash strap.sh
-
+# installation
+```
+git clone git@github.com:binarymason/dotfiles.git ~/.files
+cd ~/.files
+./script/setup
 ```
