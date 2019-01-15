@@ -5,10 +5,10 @@
 	email = john@johnmason.io
 	signingkey = 0D3959BB
 [core]
-	editor = nvim
+	editor = vim
 	autocrlf = input
 	pager = diff-so-fancy | less --tabs=4 -RFX
-	excludesfile = /Users/johnmason/.gitignore
+	excludesfile = /Users/binarymason/.gitignore
 [push]
 	default = current
 
@@ -20,7 +20,6 @@
 	helper = cache
 [commit]
 	gpgsign = false
-	template = /Users/binarymason/.gitmessage
 [init]
 	templatedir = ~/.git_template
 [gpg]
