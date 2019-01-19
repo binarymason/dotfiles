@@ -8,3 +8,5 @@ export EDITOR='vim'
 # add dotfile commands to PATH
 export PATH="$DOTFILES_ROOT/lib/bin:$PATH"
 
+# add rbenv to path
+export PATH="$HOME/.rbenv/bin:$PATH"
