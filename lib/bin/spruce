@@ -1,0 +1,23 @@
+#!/bin/bash
+
+set -e
+
+# The intent behind this script is to keep things spruced up
+# to be nice and tidy.
+#
+# Put stuff in here to clean/upgrade the system.
+
+echo '-- cleaning downloads --'
+rm -rf ~/Downloads/*
+
+(
+cd "$DOTFILES_ROOT"
+if test -n "$(git status --porcelain)"; then
+  echo '-- pushing dotfile changes to VCS --'
+  git add .
+  git commit -m 'This is a cronjob auto save. Commit your dotfile changes, weirdo.'
+  git push
+fi
+)
+
+echo 'done'
