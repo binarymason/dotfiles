@@ -37,7 +37,11 @@ Plug 'tpope/vim-unimpaired'                                     " Pairs of handy
 Plug 'vim-airline/vim-airline'                                  " lean & mean status/tabline for vim that's light as air
 Plug 'vim-airline/vim-airline-themes'                           " A collection of themes for vim-airline
 Plug 'vim-scripts/Highlight-UnMatched-Brackets'
+Plug 'fatih/vim-go'
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }  " Show git status on NERDTree
+Plug 'w0rp/ale'
+
+
 
 call plug#end()
 
@@ -361,6 +365,8 @@ augroup configgroup
     " Make ?s and :s part of words
     autocmd FileType ruby,eruby,yaml setlocal iskeyword+=?,:
 
+    " autocmd FileType go setlocal softtabstop=2 tabstop=10
+
     " Use absolute line numbers or relative depending on mode
     autocmd InsertEnter * :set number norelativenumber nohlsearch
     autocmd InsertLeave * :set nonumber relativenumber
@@ -386,6 +392,11 @@ augroup END
 " -----------------------------------------------------------------------------
 
 set shell=bash
+
+let g:go_bin_path = "/home/m/go/bin"
+let g:go_fmt_command = "goimports"
+
+
 
 " Recursively add everything to path to use helpful file commands
 set path+=client/**,lib/**,app/**
