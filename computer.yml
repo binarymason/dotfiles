@@ -1,5 +1,4 @@
+---
 
-- hosts: localhost
-  roles:
-    - dotfiles
-    - packages
+- import_playbook: dotfiles.yml
+- import_playbook: packages.yml
