@@ -1,4 +1,0 @@
-#!/bin/sh
-
-alias notes="$EDITOR ~/Desktop/notes"
-

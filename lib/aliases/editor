@@ -1,6 +1,0 @@
-#!/bin/sh
-
-# Open file with whatever current editor is.  Defaults to PWD.
-e() {
-  $EDITOR "${1:-.}"
-}

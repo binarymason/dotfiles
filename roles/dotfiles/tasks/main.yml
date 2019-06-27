@@ -1,0 +1,19 @@
+- name: register all dotfiles into variable
+  block:
+  - name: list all files in playbook files directory
+    shell: "ls -A {{ role_path }}/files/"
+    register: ls_result
+    changed_when: false
+
+  - name: register dotfiles variable
+    set_fact:
+      dotfiles: "{{ ls_result.stdout_lines }}"
+
+- name: ensure dotfiles are symlinked
+  file:
+    src: "{{ role_path }}/files/{{ item }}"
+    dest: "/home/{{ ansible_user }}/{{ item }}"
+    state: link
+    force: yes # overwrite any pre-existing files
+    follow: false
+  with_items: "{{ dotfiles }}"

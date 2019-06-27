@@ -1,4 +1,0 @@
-#!/bin/sh
-
-alias ip="curl icanhazip.com"
-

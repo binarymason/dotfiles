@@ -1,4 +1,0 @@
-#!/bin/sh
-
-alias ate=${DOTFILES_ROOT}/script/ate
-alias foodlog="quick-look ~/Desktop/food-log.txt"

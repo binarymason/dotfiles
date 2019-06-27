@@ -1,5 +1,3 @@
-source "$HOME/.files/lib/environment"
-
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -104,7 +102,6 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
- 
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'

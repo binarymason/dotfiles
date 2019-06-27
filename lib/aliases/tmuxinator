@@ -1,4 +1,0 @@
-#!/bin/sh
-
-# Alias mux to use oh-my-zsh completion plugin
-alias mux="tmuxinator"

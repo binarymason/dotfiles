@@ -1,6 +1,0 @@
-#!/bin/sh
-
-alias rc="bundle exec rails c"
-alias rs="bundle exec rails s"
-alias rdm="bundle exec rake db:migrate && bundle exec rake db:migrate RAILS_ENV=test"
-alias fs="foreman start"
