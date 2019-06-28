@@ -1,5 +1,5 @@
 # Dotfiles
-Sets up 'nix development environment using ansible.
+Sets up Ubuntu development environment using ansible.
 
 # Installation
 ```
@@ -8,6 +8,17 @@ cd ~/.files
 ./script/setup
 ```
 
-# Notes
-This assumes you already have ansible on your machine.  I'm lazy and haven't put ansible installation in the setup script yet.
+# Running Tests
+
+With Docker
+
+```
+./script/cibuild
+```
+
+On bare metal
+```
+./script/test
+```
+
 

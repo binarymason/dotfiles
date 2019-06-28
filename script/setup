@@ -6,5 +6,8 @@
 #
 # ./script/setup
 
+
+./script/install-dependencies
+
 echo "+ prompting for user sudo password to be used with ansible..."
 ansible-playbook computer.yml --ask-become-pass

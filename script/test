@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+set -e
+
+verify() {
+  pkg="$1"
+  echo -ne "$pkg: "
+  type "$pkg" >/dev/null
+  echo -ne "OK\n"
+}
+
+commands=(tmux inotifywait wget tree)
+for cmd in "${commands[@]}"; do
+  verify "$cmd"
+done
+
+echo "--------------------------------------------"
+echo "ALL TESTS PASSED."

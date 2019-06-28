@@ -12,7 +12,7 @@
 - name: ensure dotfiles are symlinked
   file:
     src: "{{ role_path }}/files/{{ item }}"
-    dest: "/home/{{ ansible_user }}/{{ item }}"
+    dest: "{{ lookup('env','HOME')  }}/{{ item }}"
     state: link
     force: yes # overwrite any pre-existing files
     follow: false
