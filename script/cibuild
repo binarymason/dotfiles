@@ -2,5 +2,4 @@
 
 docker build . -t dotfiles-test
 
-docker run dotfiles-test /bin/bash -c \
-  "ansible-playbook computer.yml --user=docker --extra-vars 'ansible_sudo_pass=docker' && ./script/test"
+docker run dotfiles-test /bin/bash -c "./script/test"
