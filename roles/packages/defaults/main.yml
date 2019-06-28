@@ -2,9 +2,9 @@ packages_to_install:
   - bluez-tools
   - curl
   - fasd
-    # - google-chrome-stable
   - htop
   - inotify-tools
+  - shellcheck
   - tmux
   - tree
   - vim

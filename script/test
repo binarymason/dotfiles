@@ -9,7 +9,19 @@ verify() {
   echo -ne "OK\n"
 }
 
-commands=(tmux inotifywait wget tree)
+
+commands=(
+blueman-manager
+curl
+fasd
+htop
+inotifywait
+shellcheck
+tmux
+tree
+vim
+wget
+)
 for cmd in "${commands[@]}"; do
   verify "$cmd"
 done
