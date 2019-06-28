@@ -12,3 +12,10 @@
     dest: /usr/local/bin/diff-so-fancy
     mode: 0755
     owner: root
+
+- name: install snaps_to_install
+  become: yes
+  snap:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ snaps_to_install }}"

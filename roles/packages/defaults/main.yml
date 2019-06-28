@@ -1,3 +1,6 @@
+# TODO
+# fireshot
+# google-chrome
 packages_to_install:
   - bluez-tools
   - curl
@@ -9,3 +12,6 @@ packages_to_install:
   - tree
   - vim
   - wget
+
+snaps_to_install:
+  - spotify
