@@ -142,7 +142,7 @@ function set_bash_prompt () {
   echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"
 
   # Set the bash prompt variable.
-  PS1="${LIGHT_GREEN}\u@\h${WHITE}:\w ${BRANCH}${BLUE}${PROMPT_SYMBOL}${COLOR_NONE} "
+  PS1="${LIGHT_GREEN}\u@\h${WHITE}:\W ${BRANCH}${BLUE}${PROMPT_SYMBOL}${COLOR_NONE} "
 }
 
 # Tell bash to execute this function just before displaying its prompt.
