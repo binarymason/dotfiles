@@ -15,6 +15,7 @@ packages_to_install:
   - tree
   - vim
   - wget
+  - xclip
 
 snaps_to_install:
   # - { snap: spotify }
