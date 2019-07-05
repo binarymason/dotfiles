@@ -16,6 +16,7 @@ bluetoothctl
 curl
 fasd
 fzf
+git
 htop
 hub
 inotifywait
