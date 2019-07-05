@@ -3,14 +3,15 @@ e() {
   $EDITOR "${1:-.}"
 }
 
+#alias git="hub"
 alias g="git"
+alias ga="git add"
 alias gaa="git add --all"
 alias gb="git branch"
 alias gc="git commit --verbose"
 alias gca="git commit --amend --no-edit"
 alias gcb="git checkout -b"
 alias gd="git diff"
-#alias git="hub"
 alias gh="hub browse"
 alias gl="git log --decorate --graph --oneline"
 alias gp="git push"
