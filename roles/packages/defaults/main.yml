@@ -2,6 +2,7 @@
 # fireshot
 # google-chrome
 packages_to_install:
+  - arandr
   - bluez
   - bluez-tools
   - curl

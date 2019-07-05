@@ -21,6 +21,7 @@ tmux
 tree
 vim
 wget
+arandr
 )
 for cmd in "${commands[@]}"; do
   verify "$cmd"
