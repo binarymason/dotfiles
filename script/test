@@ -11,9 +11,11 @@ verify() {
 
 
 commands=(
+arandr
 bluetoothctl
 curl
 fasd
+fzf
 htop
 inotifywait
 shellcheck
@@ -21,7 +23,6 @@ tmux
 tree
 vim
 wget
-arandr
 )
 for cmd in "${commands[@]}"; do
   verify "$cmd"

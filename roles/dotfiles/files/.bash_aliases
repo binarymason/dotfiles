@@ -151,3 +151,9 @@ alias notes="$EDITOR ~/Desktop/notes"
 alias vi="vim"
 alias vimrc="$EDITOR ~/.vim/vimrc"
 
+# Uses junegunn/fzf.  Think "Fuzzy Edit"
+fe() {
+  local files
+  IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
+  [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
+}

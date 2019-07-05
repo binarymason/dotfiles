@@ -23,3 +23,14 @@
     state: present
   with_items: "{{ snaps_to_install }}"
   when: install_snaps
+
+- name: install fzf
+  block:
+  - name: clone junegunn/fzf
+    git:
+      repo: https://github.com/junegunn/fzf.git
+      dest: "{{ lookup('env','HOME')  }}/.fzf"
+
+  - name: run install script
+    command: "bash {{ lookup('env','HOME')  }}/.fzf/install"
+
