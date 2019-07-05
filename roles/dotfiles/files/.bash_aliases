@@ -3,7 +3,8 @@ e() {
   $EDITOR "${1:-.}"
 }
 
-#alias git="hub"
+alias git="hub"
+
 alias g="git"
 alias ga="git add"
 alias gaa="git add --all"

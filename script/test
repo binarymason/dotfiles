@@ -17,6 +17,7 @@ curl
 fasd
 fzf
 htop
+hub
 inotifywait
 shellcheck
 tmux

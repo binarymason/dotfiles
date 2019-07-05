@@ -15,11 +15,13 @@
 
 - name: set fact to install snaps
   set_fact:
-    install_snaps: false
+    install_snaps: true
+
 - name: install snaps_to_install
   become: yes
   snap:
-    name: "{{ item }}"
+    name: "{{ item.snap }}"
+    classic: "{{ item.classic | default('no') }}"
     state: present
   with_items: "{{ snaps_to_install }}"
   when: install_snaps
@@ -33,4 +35,3 @@
 
   - name: run install script
     command: "bash {{ lookup('env','HOME')  }}/.fzf/install"
-

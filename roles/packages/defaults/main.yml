@@ -16,4 +16,5 @@ packages_to_install:
   - wget
 
 snaps_to_install:
-  - spotify
+  # - { snap: spotify }
+  - { snap: hub, classic: yes }
