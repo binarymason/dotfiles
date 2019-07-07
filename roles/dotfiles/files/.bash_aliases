@@ -108,16 +108,17 @@ docker run \
   -e "DOCKER_HOST_URL=$DOCKER_HOST" \
   technekes/nib'
 
-alias pry='
-docker run \
-  -it \
-  --rm \
-  -v $(pwd):$(pwd) \
-  -w $(pwd) \
-  -v $HOME/.docker:/root/.docker:ro \
-  -v /var/run/docker.sock:/var/run/docker.sock \
-  -e "DOCKER_HOST_URL=$DOCKER_HOST" \
-  colstrom/pry'
+# this is not needed if system has pry
+# alias pry='
+# docker run \
+#   -it \
+#   --rm \
+#   -v $(pwd):$(pwd) \
+#   -w $(pwd) \
+#   -v $HOME/.docker:/root/.docker:ro \
+#   -v /var/run/docker.sock:/var/run/docker.sock \
+#   -e "DOCKER_HOST_URL=$DOCKER_HOST" \
+#   colstrom/pry'
 
 # focus(){
 #   docker run \
