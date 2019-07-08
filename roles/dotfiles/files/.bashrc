@@ -116,6 +116,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # load a xrandr config, if present
 [ -f ~/.xprofile ] && source ~/.xprofile
 
+export EDITOR="vim"
 eval "$(fasd --init auto)"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
