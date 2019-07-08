@@ -17,6 +17,7 @@ curl
 fasd
 fzf
 git
+go
 htop
 hub
 inotifywait

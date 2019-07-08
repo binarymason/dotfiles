@@ -1,0 +1,13 @@
+
+- name: download and unarchive golang tarball
+  become: yes
+  unarchive:
+    src: "{{ go_download }}"
+    dest: "{{ go_dest }}"
+    remote_src: yes
+
+- name: ensure /usr/local/go is added to $PATH
+  lineinfile:
+    dest: "{{ go_path_file }}"
+    line: export PATH=$PATH:/usr/local/go/bin
+

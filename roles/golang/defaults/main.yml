@@ -1,0 +1,7 @@
+
+go_version: 1.12.6
+go_os: linux
+go_arch: amd64
+go_download: https://dl.google.com/go/go{{ go_version }}.{{ go_os }}-{{ go_arch }}.tar.gz
+go_dest: /usr/local
+go_path_file: "{{ lookup('env','HOME')  }}/.bashrc"
