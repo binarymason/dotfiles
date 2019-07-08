@@ -117,6 +117,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 [ -f ~/.xprofile ] && source ~/.xprofile
 
 export EDITOR="vim"
-eval "$(fasd --init auto)"
 export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH=$PATH:/usr/local/go/bin
 eval "$(rbenv init -)"
+eval "$(fasd --init auto)"
