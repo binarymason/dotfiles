@@ -1,0 +1,21 @@
+- name: download and unarchive hub tarball
+  become: yes
+  unarchive:
+    src: "{{ hub_download }}"
+    dest: "{{ hub_download_dir }}"
+    remote_src: yes
+
+- name: "ensure hub is in {{ hub_dest }}"
+  become: yes
+  copy:
+    src: "{{ hub_download_dir }}/{{ hub_dirname }}/bin/hub"
+    dest: "{{ hub_dest }}"
+    remote_src: yes
+    mode: preserve
+
+- name: "ensure hub alias is added to {{ hub_path_file }}"
+  lineinfile:
+    dest: "{{ hub_path_file }}"
+    line: eval "$(hub alias -s)"
+
+

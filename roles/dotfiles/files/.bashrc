@@ -121,3 +121,4 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
 eval "$(rbenv init -)"
 eval "$(fasd --init auto)"
+eval "$(hub alias -s)"

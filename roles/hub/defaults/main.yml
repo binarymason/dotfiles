@@ -1,0 +1,11 @@
+
+hub_version: 2.12.1
+hub_os: linux
+hub_arch: amd64
+hub_dirname: "hub-{{ hub_os }}-{{ hub_arch }}-{{ hub_version }}"
+hub_tar: "{{ hub_dirname }}.tgz"
+hub_download: "https://github.com/github/hub/releases/download/v{{ hub_version }}/{{ hub_tar }}"
+hub_download_dir: /tmp
+hub_dest: /usr/local/bin
+hub_path_file: "{{ lookup('env','HOME')  }}/.bashrc"
+
