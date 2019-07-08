@@ -1,0 +1,7 @@
+- name: install diff-so-fancy into /usr/local/bin
+  become: yes
+  copy:
+    src: diff-so-fancy
+    dest: /usr/local/bin/diff-so-fancy
+    mode: 0755
+    owner: root

@@ -1,6 +1,34 @@
 ---
 
 - hosts: localhost
+  tasks:
+    - name: install packages_to_install
+      become: yes
+      package:
+        name: "{{ item }}"
+        state: present
+        # TODO:
+        # fireshot
+        # google-chrome
+        # spotify
+        # hub
+        with_items:
+          - arandr
+          - bluez
+          - bluez-tools
+          - curl
+          - fasd
+          - git
+          - htop
+          - inotify-tools
+          - shellcheck
+          - tmux
+          - tree
+          - vim
+          - wget
+          - xclip
+          - xscreensaver
   roles:
-    - packages
+    - diff_so_fancy
+    - fzf
     - golang
