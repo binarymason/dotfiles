@@ -118,7 +118,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 export EDITOR="vim"
 export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH=$PATH:/usr/local/go/bin
+export PATH="$PATH:/usr/local/go/bin"
+export PATH="$PATH:$HOME/go/bin"
 eval "$(rbenv init -)"
 eval "$(fasd --init auto)"
 eval "$(hub alias -s)"
