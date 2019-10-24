@@ -1,0 +1,4 @@
+*~
+roles/dotfiles/files/.vim/undo*
+roles/dotfiles/files/.vim/backup*
+roles/dotfiles/files/.vim/viminfo*

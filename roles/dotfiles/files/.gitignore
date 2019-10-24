@@ -4,3 +4,7 @@ node_modules
 .vimrc
 .vim/plugged
 .vim/init.vim
+.vim/viminfo
+.vim/backup
+.vim/swap
+.vim/undo
