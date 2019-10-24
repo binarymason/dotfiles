@@ -27,9 +27,9 @@
           - vim
           - wget
           - xclip
-          - xscreensaver
   roles:
-    - diff_so_fancy
-    - fzf
-    - golang
-    - hub
+    - { role: 'diff_so_fancy', tags: 'diff_so_fancy' }
+    - { role: 'fzf', tags: 'fzf' }
+    - { role: 'golang', tags: 'golang' }
+    - { role: 'hub', tags: 'hub' }
+    - { role: 'jupyter', tags: 'jupyter' }

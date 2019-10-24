@@ -58,6 +58,11 @@ alias zshenv="$EDITOR ~/.zshenv"
 alias rz="source ~/.zshrc"
 
 
+alias pbcopy="xclip -selection c"
+
+# Open my goals for the week.
+alias week="$EDITOR $HOME/code/goals/week.md"
+
 # Opens/creates a tmux session.
 # If no parameter is given, an existing session will be loaded if available
 #
@@ -136,6 +141,26 @@ docker run \
 
 alias ip="curl icanhazip.com"
 
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+alias beep="paplay /usr/share/sounds/freedesktop/stereo/complete.oga"
+
+timer() {
+  length=${1:-1}
+  echo "setting timer for $length minutes"
+  seconds_length=$((length*60))
+  end=$((SECONDS+$seconds_length))
+  while true; do
+    if [ $SECONDS -gt $end ] || [ $SECONDS -eq $end ]; then
+      echo "done!"
+      alert "timer is done!"
+      beep
+      break
+    fi
+  done
+}
 todo_path=$HOME/Desktop/todo.txt
 
 todo() {
@@ -157,3 +182,6 @@ fe() {
   IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
   [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
 }
+
+
+alias tree="tree -I 'node_modules|__pycache__'"

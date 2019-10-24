@@ -1,0 +1,5 @@
+- name: install jupyterlab
+  pip:
+    name: jupyterlab
+    executable: pip3
+    extra_args: --user

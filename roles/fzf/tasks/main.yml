@@ -4,4 +4,4 @@
     dest: "{{ fzf_dir }}"
 
 - name: run install script
-  command: "bash {{ fzf_dir }}"
+  command: "bash {{ fzf_dir }}/install"

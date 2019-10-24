@@ -1,8 +1,9 @@
 #!/bin/sh
-# This is for my ThinkPad T470S.  Notice I am using HDMI-2 as primary.
+# This is for my ThinkPad T470S.  Notice I am using "$display_port" as primary.
 
-# only update xrandr if HDMI-2 is connected
-if xrandr | grep " connected " | awk '{ print$1  }' | grep HDMI-2; then
-  xrandr --output HDMI-2 --primary --mode 2560x1440 --pos 1600x0 --rotate normal --output HDMI-1 --off --output DP-1 --off --output eDP-1 --mode 1600x900 --pos 0x0 --rotate normal --output DP-2 --off
+display_port=DP-1 # usb-c
+# only update xrandr if "$display_port" is connected
+if xrandr | grep " connected " | awk '{ print$1  }' | grep "^$display_port"; then
+  xrandr --output HDMI-2 --off --output HDMI-1 --off --output DP-1 --primary --mode 2560x1440 --pos 1600x0 --rotate normal --output eDP-1 --mode 1600x900 --pos 0x56 --rotate normal --output DP-2 --off
 fi
 

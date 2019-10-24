@@ -4,6 +4,8 @@ case $- in
       *) return;;
 esac
 
+export EDITOR="vim"
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -107,19 +109,19 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # load a xrandr config, if present
 [ -f ~/.xprofile ] && source ~/.xprofile
 
-export EDITOR="vim"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$PATH:/usr/local/go/bin"
-export PATH="$PATH:$HOME/go/bin"
+export GOBIN="$HOME/go/bin"
+export PATH="$PATH:$GOBIN"
 eval "$(rbenv init -)"
 eval "$(fasd --init auto)"
 eval "$(hub alias -s)"
+export PATH=$PATH:/usr/local/go/bin
+export PYTHONPATH=$PYTHONPATH:/home/m/code/models/research:/home/m/code/models/research/slim
+
