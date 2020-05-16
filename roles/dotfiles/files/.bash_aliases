@@ -3,6 +3,8 @@ e() {
   $EDITOR "${1:-.}"
 }
 
+alias ownit="sudo chown -R ${USER}:${USER} ."
+
 alias g="git"
 alias ga="git add"
 alias gaa="git add --all"

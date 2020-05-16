@@ -12,7 +12,7 @@ Plug 'ervandew/supertab'                                        " Perform all yo
 Plug 'gioele/vim-autoswap'                                      " Stop the swap file messages. Just switch to the correct window!
 Plug 'jgdavey/vim-blockle', { 'for': 'ruby' }                   " Quickly toggle ruby blocks with Leader b
 Plug 'jiangmiao/auto-pairs'                                     " Insert or delete brackets, parens, quotes in pair
-Plug 'junegunn/vim-easy-align', { 'for': 'ruby' }               " A Vim alignment plugin
+Plug 'junegunn/vim-easy-align', { 'for': ['ruby', 'python'] }   " A Vim alignment plugin
 Plug 'mxw/vim-jsx',                                             " React JSX syntax highlighting and indenting for vim.
 Plug 'othree/html5.vim', { 'for': ['javascript', 'html'] }      " HTML5 omnicomplete and syntax
 Plug 'mxw/vim-jsx'
@@ -164,19 +164,22 @@ nmap ga <Plug>(EasyAlign)
 "  Utilities
 " -----------------------------------------------------------------------------
 " Spaces and Tabs
+
 set autoindent                   " new lines indent automatically
 set expandtab                    " tabs are spaces
 set smarttab                     " change indent amount depending on context
-set softtabstop=2                " number of spaces in tab when editing
+set softtabstop=0                " number of spaces in tab when editing
 set shiftwidth=2                 " Calling >>  or << is 2 spaces
-set tabstop=8                    " hardcode the default number of visual spaces per TAB
+set tabstop=2                    " hardcode the default number of visual spaces per TAB
 set shiftround                   " When at 3 spaces and I hit >>, go to 4, not 5.
 
 " Similiar to bash completion
 set wildmode=list:full
 
 " Allow vim yank and delete to go to clipboard
-set clipboard=unnamed
+" set clipboard=unnamed
+set clipboard=unnamedplus
+
 
 " Searching
 set incsearch                    " search as characters are entered
@@ -198,6 +201,7 @@ nnoremap mm @@
 
 " Always paste with indent
 nnoremap p p=`]
+
 
 " Quicker window replacement
 nnoremap <C-w><Up> <C-w>K
@@ -370,6 +374,8 @@ augroup configgroup
     " Use absolute line numbers or relative depending on mode
     autocmd InsertEnter * :set number norelativenumber nohlsearch
     autocmd InsertLeave * :set nonumber relativenumber
+
+    " autocmd BufEnter * retab
 
     " automatically fix typos for markdown files
     autocmd filetype markdown

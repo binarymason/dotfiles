@@ -125,3 +125,5 @@ eval "$(hub alias -s)"
 export PATH=$PATH:/usr/local/go/bin
 export PYTHONPATH=$PYTHONPATH:/home/m/code/models/research:/home/m/code/models/research/slim
 
+# Take a selfie everytime I source my .bashrc.  I'll see how I age overtime. Yikes!
+$(selfie --device /dev/video2 --output $HOME/Dropbox/selfies &>/dev/null &)
