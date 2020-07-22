@@ -12,7 +12,7 @@
         # google-chrome
         # spotify
         # hub
-        with_items:
+      with_items:
           - arandr
           - bluez
           - bluez-tools

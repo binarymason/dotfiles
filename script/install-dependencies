@@ -4,6 +4,9 @@ set -e
 
 sudo apt-get update
 sudo apt-get install -y software-properties-common
-sudo apt-add-repository --yes --update ppa:ansible/ansible
-sudo apt-get install -y ansible=2.8\*
+sudo apt install ansible -y
+#sudo apt install python3-pip
+#python3 -m pip install ansible
+#sudo apt-add-repository --yes --update ppa:ansible/ansible
+#sudo apt-get install -y ansible=2.8\*
 sudo apt-get autoremove -y

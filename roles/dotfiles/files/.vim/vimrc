@@ -3,6 +3,7 @@ set nocompatible
 call plug#begin('~/.vim/plugged')
 
 " Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'ekalinin/Dockerfile.vim'
 Plug 'airblade/vim-gitgutter'                                   " Shows a git diff in the gutter (sign column) and stages/undoes hunks
 Plug 'altercation/vim-colors-solarized'
 Plug 'bronson/vim-trailing-whitespace'                          " Highlights trailing whitespace in red and provides :FixWhitespace to fix it
@@ -13,7 +14,7 @@ Plug 'gioele/vim-autoswap'                                      " Stop the swap 
 Plug 'jgdavey/vim-blockle', { 'for': 'ruby' }                   " Quickly toggle ruby blocks with Leader b
 Plug 'jiangmiao/auto-pairs'                                     " Insert or delete brackets, parens, quotes in pair
 Plug 'junegunn/vim-easy-align', { 'for': ['ruby', 'python'] }   " A Vim alignment plugin
-Plug 'mxw/vim-jsx',                                             " React JSX syntax highlighting and indenting for vim.
+Plug 'MaxMEllon/vim-jsx-pretty',                                " React JSX syntax highlighting and indenting for vim.
 Plug 'othree/html5.vim', { 'for': ['javascript', 'html'] }      " HTML5 omnicomplete and syntax
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'                                  " Vastly improved Javascript indentation and syntax support
@@ -40,6 +41,7 @@ Plug 'vim-scripts/Highlight-UnMatched-Brackets'
 Plug 'fatih/vim-go'
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }  " Show git status on NERDTree
 Plug 'w0rp/ale'
+Plug 'skywind3000/asyncrun.vim'
 
 
 
@@ -165,13 +167,13 @@ nmap ga <Plug>(EasyAlign)
 " -----------------------------------------------------------------------------
 " Spaces and Tabs
 
-set autoindent                   " new lines indent automatically
-set expandtab                    " tabs are spaces
-set smarttab                     " change indent amount depending on context
+set smartindent                   " new lines indent automatically
+" set smarttab                     " change indent amount depending on context
 set softtabstop=0                " number of spaces in tab when editing
 set shiftwidth=2                 " Calling >>  or << is 2 spaces
 set tabstop=2                    " hardcode the default number of visual spaces per TAB
 set shiftround                   " When at 3 spaces and I hit >>, go to 4, not 5.
+set expandtab                    " tabs are spaces
 
 " Similiar to bash completion
 set wildmode=list:full
@@ -364,6 +366,7 @@ augroup configgroup
 
     autocmd BufEnter *.zsh-theme setlocal filetype=zsh
     autocmd BufEnter Guardfile,.pryrc setlocal filetype=ruby
+    autocmd BufEnter *Dockerfile* setlocal filetype=dockerfile
     autocmd BufEnter,FocusGained * checktime
 
     " Make ?s and :s part of words
@@ -472,4 +475,6 @@ set hidden
 
 " Enable matchit to extend % for html tags
 runtime macros/matchit.vim
+
+autocmd BufWritePost *.js AsyncRun -post=checktime ./node_modules/.bin/eslint --fix %
 

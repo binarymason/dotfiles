@@ -2,6 +2,10 @@
 e() {
   $EDITOR "${1:-.}"
 }
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
 
 alias ownit="sudo chown -R ${USER}:${USER} ."
 
@@ -185,5 +189,8 @@ fe() {
   [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
 }
 
+function csv {
+  column -t -s, -n "$@" | less -F -S -X -K
+}
 
 alias tree="tree -I 'node_modules|__pycache__'"

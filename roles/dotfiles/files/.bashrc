@@ -115,15 +115,19 @@ alias l='ls -CF'
 # load a xrandr config, if present
 [ -f ~/.xprofile ] && source ~/.xprofile
 
-export PATH="$HOME/.rbenv/bin:$PATH"
+#export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$PATH:/usr/local/go/bin"
 export GOBIN="$HOME/go/bin"
 export PATH="$PATH:$GOBIN"
-eval "$(rbenv init -)"
+#eval "$(rbenv init -)"
 eval "$(fasd --init auto)"
 eval "$(hub alias -s)"
 export PATH=$PATH:/usr/local/go/bin
-export PYTHONPATH=$PYTHONPATH:/home/m/code/models/research:/home/m/code/models/research/slim
 
 # Take a selfie everytime I source my .bashrc.  I'll see how I age overtime. Yikes!
-$(selfie --device /dev/video2 --output $HOME/Dropbox/selfies &>/dev/null &)
+#$(selfie --device /dev/video2 --output $HOME/Dropbox/selfies &>/dev/null &)
+
+# export PYTHONPATH=$PYTHONPATH:/home/m/code/models/research:/home/m/code/models/research/slim
+# export PYTHONPATH=$HOME/code/tf-models/research:$PYTHONPATH
+# export PYTHONPATH=$HOME/code/tf-models/research/slim:$PYTHONPATH
+
