@@ -22,3 +22,7 @@ On bare metal
 ```
 
 
+----------------
+
+### Where TF is my tmux config?
+https://github.com/gpakosz/.tmux
