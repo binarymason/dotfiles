@@ -14,7 +14,7 @@ Plug 'gioele/vim-autoswap'                                      " Stop the swap 
 Plug 'jgdavey/vim-blockle', { 'for': 'ruby' }                   " Quickly toggle ruby blocks with Leader b
 Plug 'jiangmiao/auto-pairs'                                     " Insert or delete brackets, parens, quotes in pair
 Plug 'junegunn/vim-easy-align', { 'for': ['ruby', 'python'] }   " A Vim alignment plugin
-Plug 'MaxMEllon/vim-jsx-pretty',                                " React JSX syntax highlighting and indenting for vim.
+" Plug 'MaxMEllon/vim-jsx-pretty',                                " React JSX syntax highlighting and indenting for vim.
 Plug 'othree/html5.vim', { 'for': ['javascript', 'html'] }      " HTML5 omnicomplete and syntax
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'                                  " Vastly improved Javascript indentation and syntax support

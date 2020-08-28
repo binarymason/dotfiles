@@ -4,6 +4,6 @@
 display_port=DP-1 # usb-c
 # only update xrandr if "$display_port" is connected
 if xrandr | grep " connected " | awk '{ print$1  }' | grep "^$display_port"; then
-  source ~/.screenlayout/mylayout.sh
+  xrandr --output eDP-1 --mode 2048x1152 --pos 0x0 --rotate normal --output DP-1 --primary --mode 2560x1440 --pos 2048x0 --rotate normal --output HDMI-1 --off --output DP-2 --off --output HDMI-2 --mode 2560x1440 --pos 4608x0 --rotate normal
 fi
 

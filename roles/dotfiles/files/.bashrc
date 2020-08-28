@@ -116,13 +116,22 @@ alias l='ls -CF'
 [ -f ~/.xprofile ] && source ~/.xprofile
 
 #export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="$PATH:/usr/local/go/bin"
+# export PATH="$PATH:/usr/local/go/bin"
+
+# export GOROOT=/usr/lib/go
+# export GOPATH=$HOME/go
+# export GOROOT=$GOPATH
+# export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
 export GOBIN="$HOME/go/bin"
 export PATH="$PATH:$GOBIN"
 #eval "$(rbenv init -)"
 eval "$(fasd --init auto)"
 eval "$(hub alias -s)"
 export PATH=$PATH:/usr/local/go/bin
+
+# add sass to path
+export PATH=$PATH:$HOME/dart-sass
 
 # Take a selfie everytime I source my .bashrc.  I'll see how I age overtime. Yikes!
 #$(selfie --device /dev/video2 --output $HOME/Dropbox/selfies &>/dev/null &)
