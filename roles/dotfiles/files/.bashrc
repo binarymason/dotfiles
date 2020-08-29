@@ -113,7 +113,7 @@ alias l='ls -CF'
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # load a xrandr config, if present
-[ -f ~/.xprofile ] && source ~/.xprofile
+#[ -f ~/.xprofile ] && source ~/.xprofile
 
 #export PATH="$HOME/.rbenv/bin:$PATH"
 # export PATH="$PATH:/usr/local/go/bin"
