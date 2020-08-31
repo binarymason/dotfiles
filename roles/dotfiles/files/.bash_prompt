@@ -124,6 +124,16 @@ function set_prompt_symbol () {
   fi
 }
 
+
+# Determine active Python virtualenv details.
+function set_virtualenv () {
+  if test -z "$VIRTUAL_ENV" ; then
+      PYTHON_VIRTUALENV=""
+  else
+      PYTHON_VIRTUALENV="${BLUE}[`basename \"$VIRTUAL_ENV\"`]${COLOR_NONE} "
+  fi
+}
+
 # Set the full bash prompt.
 function set_bash_prompt () {
   # Set the PROMPT_SYMBOL variable. We do this first so we don't lose the
@@ -139,10 +149,13 @@ function set_bash_prompt () {
     BRANCH=''
   fi
 
+  # Set the PYTHON_VIRTUALENV variable
+  set_virtualenv
+
   echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD}\007"
 
   # Set the bash prompt variable.
-  PS1="${LIGHT_GREEN}\u@\h${WHITE}:\W ${BRANCH}${BLUE}${PROMPT_SYMBOL}${COLOR_NONE} "
+  PS1="${PYTHON_VIRTUALENV}${LIGHT_GREEN}\u@\h${WHITE}:\W ${BRANCH}${BLUE}${PROMPT_SYMBOL}${COLOR_NONE} "
 }
 
 # Tell bash to execute this function just before displaying its prompt.
